@@ -1,0 +1,6 @@
+# Orik Configuration File
+
+# Example
+# MODULES is for modules you want to automatically be included. These are automatically run with "run all".
+
+MODULES=('first' 'second' 'third')

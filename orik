@@ -1,0 +1,66 @@
+#!/bin/bash
+
+# Orik is a utility for combining multiple tasks to be carried out on the command line.
+
+chmod +x modules/*
+
+SCRIPTNAME=orik
+VERSION=0.1a
+
+SCRIPT_DIR=$PWD
+
+MINIMUM_ARGS=1 # Minimum arguments required, otherwise usage() is run.
+
+function usage() {
+	echo "Usage: ./$SCRIPTNAME run [options] [module]"
+	echo
+	echo "Orik can also run multiple modules per run ordered as inputted."
+	echo
+	echo "General:"
+	echo "-l	Lists all $SCRIPTNAME modules."
+	echo "-v	Shows $SCRIPTNAME version."
+	return
+}
+
+if [ -f config.txt ]
+  then
+    . config.txt
+  else
+	echo "Missing configuration file. Aborting."
+	exit
+fi
+
+if [ "$1" = "-l" ]
+  then
+    echo "Available Modules: ${MODULES[@]}"    
+	exit
+fi
+
+if [ "$1" = "-v" ]
+  then
+	echo "$SCRIPTNAME version $VERSION"
+	exit
+fi
+
+if [ $# -lt $MINIMUM_ARGS ]
+  then
+    usage
+fi
+
+if [ "$1" = "run" ]
+  then
+	if [ "$2" = "all" ]
+	  then
+	    for i in "${MODULES[@]}"
+		  do
+			cd $SCRIPT_DIR/..
+		    . $SCRIPT_DIR/modules/$i
+		  done
+	elif [ "$2" ]
+	  then
+		cd $SCRIPT_DIR
+		cd ..
+		. $SCRIPT_DIR/modules/$2
+		exit
+	fi
+fi
