@@ -2,12 +2,13 @@
 
 # Orik is a utility for combining multiple tasks to be carried out on the command line.
 
-chmod +x modules/*
-
 SCRIPTNAME=orik
 VERSION=0.1a
 
-SCRIPT_DIR=$PWD
+SCRIPT_DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+cd $SCRIPT_DIR
+chmod +x modules/*
 
 MINIMUM_ARGS=1 # Minimum arguments required, otherwise usage() is run.
 
