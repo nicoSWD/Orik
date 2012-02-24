@@ -2,10 +2,10 @@ Hi, I'm Orik!
 
 You can write modules for me in your preferred shell scripting language, and then place them in the modules/ directory!
 
-To run a module, simple type ./orik run MODULENAME from the orik directory. 
+To run a module, simple type orik/orik run MODULENAME.
 
 -- Setting up automatic running of modules --
 
-You can edit config.txt's MODULES array to create a list of modules that should be automatically run. These are run when you enter the "./orik run all" command.
+You can edit config.txt's MODULES array to create a list of modules that should be automatically run. These are run when you enter the "orik/orik run all" command.
 
 I hope you like me! (please do, please do!)
