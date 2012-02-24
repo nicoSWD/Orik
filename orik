@@ -6,6 +6,7 @@ SCRIPTNAME=orik
 VERSION=0.1a
 
 SCRIPT_DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+CURRENT_DIR=$PWD
 
 cd $SCRIPT_DIR
 chmod +x modules/*
@@ -54,13 +55,12 @@ if [ "$1" = "run" ]
 	  then
 	    for i in "${MODULES[@]}"
 		  do
-			cd $SCRIPT_DIR/..
+			cd $CURRENT_DIR
 		    . $SCRIPT_DIR/modules/$i
 		  done
 	elif [ "$2" ]
 	  then
-		cd $SCRIPT_DIR
-		cd ..
+		cd $CURRENT_DIR
 		. $SCRIPT_DIR/modules/$2
 		exit
 	fi
