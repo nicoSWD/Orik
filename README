@@ -1,18 +1,8 @@
 Hi, I'm Orik!
 
-I am a modular script management utility. (it's not that complicated, honest!)
+You can write modules for me in your preferred shell scripting language, and then place them in the modules/ directory!
 
-You can run me from anywhere, and I will execute your chosen modules in your current directory.
-
-Think of me as your central, modular script system.
-
-I'm also a pretty cool dwarf :)
-
--- Running a module --
-
-Ensure that your desired module is in the orik/modules directory.
-
-To run a module, simple type orik/orik run MODULENAME. It's that simple.
+To run a module, simple type orik/orik run MODULENAME.
 
 -- Setting up automatic running of modules --
 
