@@ -1,13 +1,12 @@
 #!/bin/bash
 
 # Orik is a utility for combining multiple tasks to be carried out on the command line.
-
-
 SCRIPTNAME=orik
 VERSION=0.2a
 
 SCRIPT_DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 CURRENT_DIR=$PWD
+BASENAME=`basename $0`
 
 cd $SCRIPT_DIR
 chmod +x modules/*
@@ -54,9 +53,9 @@ if [ "$1" = "-i" ]
 		path=$PATH
 		bin=${path%%:*}
 
-		if [ ! -h $bin/$SCRIPTNAME ]
+		if [ ! -h $bin/$BASENAME ]
 			then
-				ln -s $CURRENT_DIR/$SCRIPTNAME $bin/$SCRIPTNAME
+				ln -s $CURRENT_DIR/$BASENAME $bin/$BASENAME
 				ln -s $CURRENT_DIR/modules $bin/modules
 				ln -s $CURRENT_DIR/config.txt $bin/config.txt
 		fi
@@ -70,7 +69,7 @@ if [ "$1" = "-u" ]
 		path=$PATH
 		bin=${path%%:*}
 		
-		rm $bin/$SCRIPTNAME
+		rm $bin/$BASENAME
 		rm $bin/config.txt
 		rm -rf $bin/modules
 		
