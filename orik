@@ -73,6 +73,8 @@ if [ "$1" = "-u" ]
 		rm $bin/$SCRIPTNAME
 		rm $bin/config.txt
 		rm -rf $bin/modules
+		
+		exit
 fi
 
 
