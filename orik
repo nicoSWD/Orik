@@ -48,7 +48,7 @@ fi
 
 if [ "$1" = "-i" ]
 	then
-		echo "Installing Orik globally..."
+		echo "Installing $SCRIPTNAME globally..."
 		
 		path=$PATH
 		bin=${path%%:*}
@@ -64,7 +64,7 @@ fi
 
 if [ "$1" = "-u" ]
 	then
-		echo "Uninstalling Orik..."
+		echo "Uninstalling $SCRIPTNAME..."
 		
 		path=$PATH
 		bin=${path%%:*}
