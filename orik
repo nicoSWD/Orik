@@ -21,8 +21,8 @@ function usage() {
 	echo "General:"
 	echo "-l	Lists all $SCRIPTNAME modules."
 	echo "-v	Shows $SCRIPTNAME version."
-	echo "-i	Installs Orik globally."
-	echo "-u	Uninstalls Orik."
+	echo "-i	Installs $SCRIPTNAME globally."
+	echo "-u	Uninstalls $SCRIPTNAME."
 	return
 }
 
